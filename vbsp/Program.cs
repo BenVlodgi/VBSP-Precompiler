@@ -16,6 +16,7 @@ namespace vbsp
             var ccTagIntermediateCompilerProcess = new Process();
             ccTagIntermediateCompilerProcess.StartInfo.FileName = "CCTagIntermediateCompiler.exe";
             ccTagIntermediateCompilerProcess.StartInfo.Arguments = Environment.GetCommandLineArgs().Last() + ".vmf";
+            ccTagIntermediateCompilerProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             ccTagIntermediateCompilerProcess.Start();
             ccTagIntermediateCompilerProcess.WaitForExit();
 
@@ -24,6 +25,7 @@ namespace vbsp
             var portal2Process = new Process();
             portal2Process.StartInfo.FileName = "vbsp_original.exe";
             portal2Process.StartInfo.Arguments = Environment.CommandLine.Substring(Environment.CommandLine.IndexOf("exe\"") + 4).Trim();
+            portal2Process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             portal2Process.Start();
             portal2Process.WaitForExit();
         }
