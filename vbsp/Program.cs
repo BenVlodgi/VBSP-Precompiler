@@ -15,7 +15,7 @@ namespace vbsp
             //Call alternate compilers
             var ccTagIntermediateCompilerProcess = new Process();
             ccTagIntermediateCompilerProcess.StartInfo.FileName = "CCTagIntermediateCompiler.exe";
-            ccTagIntermediateCompilerProcess.StartInfo.Arguments = Environment.GetCommandLineArgs().Last() + ".vmf";
+            ccTagIntermediateCompilerProcess.StartInfo.Arguments = '"' + Environment.GetCommandLineArgs().Last() + ".vmf\"";
             ccTagIntermediateCompilerProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             ccTagIntermediateCompilerProcess.Start();
             ccTagIntermediateCompilerProcess.WaitForExit();
