@@ -14,14 +14,14 @@ namespace vbsp
         {
             //Call precompiler operation to ensure the STEAMID64 directory exists
             var ccEnsureSteamIDDirectoryExists = new Process();
-            ccEnsureSteamIDDirectoryExists.StartInfo.FileName = "CCEnsureSteamIDDirectoryExists.exe";
+            ccEnsureSteamIDDirectoryExists.StartInfo.FileName = "EnsureSteamIDDirectoryExists.exe";
             ccEnsureSteamIDDirectoryExists.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             ccEnsureSteamIDDirectoryExists.Start();
             ccEnsureSteamIDDirectoryExists.WaitForExit();
 
             //Call alternate compilers
             var ccTagIntermediateCompilerProcess = new Process();
-            ccTagIntermediateCompilerProcess.StartInfo.FileName = "CCTagIntermediateCompiler.exe";
+            ccTagIntermediateCompilerProcess.StartInfo.FileName = "PuntIntermediateCompiler.exe";
             ccTagIntermediateCompilerProcess.StartInfo.Arguments = string.Format("\"{0}\"", Environment.GetCommandLineArgs().Last());
             ccTagIntermediateCompilerProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             ccTagIntermediateCompilerProcess.Start();
